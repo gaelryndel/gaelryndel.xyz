@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ pageTitle | striptags(true) | safe }}</title>
+  <link rel="sitemap" href="{{ site.url }}/sitemap.xml" type="application/xml" title="Sitemap">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+  <link rel="me" href="{{ site.social.github }}">
+  <link rel="me" href="{{ site.social.twitter }}">
+  <link rel="me" href="{{ site.social.mastodon }}">
+  <link rel="me" href="{{ site.social.pixelfed }}">
+  <link rel="me" href="{{ site.social.instagram }}">
+  <meta name="description" content="{{ summary or site.description | striptags(true) | safe }}">
+  <meta name="robots" content="{% if robots == true %}noindex{% else %}index{% endif %},follow">
+  <meta name="generator" content="{{ eleventy.generator }}">
+</head>
+<body>
+  <main id="main" data-type="{{ type }}" {%- if lang %} lang="{{ lang }}" {%- endif %}>
+    {{ layoutContent | safe }}
+  </main>
+</body>
+</html>

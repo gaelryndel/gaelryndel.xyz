@@ -1,0 +1,10 @@
+---
+layout: layouts/default.njk
+---
+<h1>{{ title }}</h1>
+{%- if introduction %}
+<section>
+  <p>{{ introduction | striptags(true) | safe }}</p>
+</section>
+{%- endif %}
+{{ layoutContent | safe }}
