@@ -16,8 +16,8 @@
 
   [plugins.inputs]
     paths = [
-      "_site/img/generated", # Eleventy image disk cache
-      ".cache" # Remote asset cache
+      "_site/img/generated", # 11ty image disk cache
+      ".cache" # remote asset cache
     ]
 
 [[headers]]
@@ -70,7 +70,7 @@
   to = "/404"
   status = 404
 
-# Favicon
+# favicon
 [[redirects]]
   from = "/favicon.ico"
   to = "/assets/icons/favicon.ico"

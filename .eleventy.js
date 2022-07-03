@@ -21,6 +21,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
+  eleventyConfig.addCollection('category', require('./lib/collections/category.js'));
+  eleventyConfig.addCollection('posts', require('./lib/collections/posts.js'));
+
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
   eleventyConfig.addPassthroughCopy('./src/media');

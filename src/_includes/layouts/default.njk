@@ -1,23 +1,37 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+<html lang="{{ site.lang }}" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ pageTitle | striptags(true) | safe }}</title>
-  <link rel="sitemap" href="{{ site.url }}/sitemap.xml" type="application/xml" title="Sitemap">
   <link rel="canonical" href="{{ canonicalUrl }}">
+  <link rel="alternate" href="{{ site.feed.atom }}" type="application/atom+xml" title="Atom Feed">
+  <link rel="alternate" href="{{ site.feed.json }}" type="application/feed+json" title="JSON Feed">
+  <link rel="authorization_endpoint" href="{{ site.endpoint.auth }}">
+  <link rel="token_endpoint" href="{{ site.endpoint.token }}">
+  <link rel="microsub" href="{{ site.endpoint.micropub }}">
+  <link rel="microsub" href="{{ site.endpoint.microsub }}">
+  <link rel="webmention" href="{{ site.endpoint.webmention }}">
   <link rel="me" href="{{ site.social.github }}">
   <link rel="me" href="{{ site.social.twitter }}">
   <link rel="me" href="{{ site.social.mastodon }}">
   <link rel="me" href="{{ site.social.pixelfed }}">
   <link rel="me" href="{{ site.social.instagram }}">
+  <link rel="sitemap" href="{{ site.url }}/sitemap.xml" type="application/xml" title="Sitemap">
+  <meta name="generator" content="{{ eleventy.generator }}">
   <meta name="description" content="{{ summary or site.description | striptags(true) | safe }}">
   <meta name="robots" content="{% if robots == true %}noindex{% else %}index{% endif %},follow">
-  <meta name="generator" content="{{ eleventy.generator }}">
 </head>
+
 <body>
+  {% include "header.njk" %}
+
   <main id="main" data-type="{{ type }}" {%- if lang %} lang="{{ lang }}" {%- endif %}>
     {{ layoutContent | safe }}
   </main>
+
+  {% include "footer.njk" %}
 </body>
+
 </html>
