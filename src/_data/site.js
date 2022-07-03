@@ -10,11 +10,11 @@ module.exports = {
     json: 'https://gaelryndel.xyz/feed.json',
   },
   endpoint: {
-    auth: "https://indieauth.com/auth",
-    token: "https://tokens.indieauth.com/token",
-    micropub: "https://kit.gaelryndel.xyz/micropub",
-    microsub: "https://aperture.p3k.io/microsub/765",
-    webmention: "https://webmention.io/gaelryndel.xyz/webmention",
+    auth: 'https://indieauth.com/auth',
+    token: 'https://tokens.indieauth.com/token',
+    micropub: 'https://kit.gaelryndel.xyz/micropub',
+    microsub: 'https://aperture.p3k.io/microsub/771',
+    webmention: 'https://webmention.io/gaelryndel.xyz/webmention',
   },
   author: {
     name: 'Gael Ryndel',
