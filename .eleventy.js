@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.setLibrary('md', require('./lib/markdown/markdown.js'));
   eleventyConfig.setTemplateFormats(['njk', 'md', '11ty.js']);
+  eleventyConfig.setServerPassthroughCopyBehavior('copy');
 
   eleventyConfig.ignores.add('README.md');
   eleventyConfig.ignores.add('./src/**/template.md');
@@ -14,6 +15,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginRss);
 
+  eleventyConfig.addFilter('cssmin', require('./lib/filters/cssmin.js'));
   eleventyConfig.addFilter('date', require('./lib/filters/datetime.js'));
   eleventyConfig.addFilter('hostname', require('./lib/filters/hostname.js'));
   eleventyConfig.addFilter('limit', require('./lib/filters/limit.js'));
@@ -22,7 +24,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
   eleventyConfig.addCollection('category', require('./lib/collections/category.js'));
-  eleventyConfig.addCollection('posts', require('./lib/collections/posts.js'));
+  eleventyConfig.addCollection('post', require('./lib/collections/post.js'));
 
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');

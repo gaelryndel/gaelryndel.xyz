@@ -1,4 +1,4 @@
-const webmentions = require("../../lib/utils/getwm.js");
+const webmentions = require('../../lib/utils/getwm.js');
 
 module.exports = {
   pageTitle: (data) => `${data.title} · ${data.site.title}`,

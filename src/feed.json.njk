@@ -15,7 +15,7 @@ permalink: /feed.json
 }
 ],
 "items": [
-{%- for post in collections.posts | limit(10) -%}
+{%- for post in collections.post | limit(10) -%}
 {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset -%}
 {
 "id": "{{ absolutePostUrl }}",

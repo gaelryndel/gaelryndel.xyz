@@ -6,7 +6,7 @@ permalink: /feed.xml
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>{{ site.url }}</id>
   <title>{{ site.title }}</title>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <author>
     <name>@{{ site.author.handle }}</name>
     <email>{{ site.author.email }}</email>
@@ -18,7 +18,7 @@ permalink: /feed.xml
   <rights>
     &#169; {% year %} @{{ site.author.handle }}. Content Creative Commons licensed unless otherwise stated.
   </rights>
-  {%- for post in collections.posts | limit(10) %}
+  {%- for post in collections.post | limit(10) %}
   {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
   <entry>
     <id>{{ absolutePostUrl }}</id>
