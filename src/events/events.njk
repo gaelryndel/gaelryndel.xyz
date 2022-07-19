@@ -1,0 +1,21 @@
+---
+layout: layouts/page.njk
+title: Събития
+summary: Изложби, представления, концерти и други събития на които съм присъствал
+introduction: Изложби, представления, концерти и други събития на които съм присъствал
+permalink: /events/
+date: 'Last Modified'
+type: page
+category: page
+override:tags: []
+---
+<ol>
+{%- for item in collections.event | reverse -%}
+  <li>
+      <a href="{{ item.url | url }}">
+        {{ item.data.date | date("dd.MM.yyyy") }}
+      </a>
+      {{ item.data.title }}
+  </li>
+{%- endfor -%}
+</ol>

@@ -16,6 +16,7 @@
 
   [plugins.inputs]
     paths = [
+      "_site/assets/img", # 11ty image disk cache
       "_site/img/generated", # 11ty image disk cache
       ".cache" # remote asset cache
     ]
@@ -24,7 +25,7 @@
   for = "/*"
 
   [headers.values]
-    Content-Security-Policy = "script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'self'; img-src 'self' data: *.mapbox.com raw.githubusercontent.com kit.gaelryndel.xyz"
+    Content-Security-Policy = "script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'self'; img-src 'self' data: *.mapbox.com raw.githubusercontent.com kit.gaelryndel.xyz gaelryndel.herokuapp.com"
     Permissions-Policy = "interest-cohort=()"
     Referrer-Policy= "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"

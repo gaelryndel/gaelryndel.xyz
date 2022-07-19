@@ -8,6 +8,7 @@
   },
   "bugs": "https://github.com/gaelryndel/gaelryndel.xyz/issues",
   "keywords": [
+    "11ty",
     "eleventy",
     "indieweb",
     "personal-website"
@@ -24,7 +25,7 @@
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "clean-css": "^5.3.0",
+    "clean-css": "^5.3.1",
     "dotenv": "^16.0.1",
     "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
@@ -50,7 +51,7 @@
     "singleQuote": true
   },
   "homepage": "https://gaelryndel.xyz",
-  "description": "gaelryndel's personal website — gaelryndel.xyz",
+  "description": "Gaelryndel's personal website — gaelryndel.xyz",
   "author": "@gaelryndel",
   "license": "See license in LICENSE"
 }

@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const imageShortcode = require('./lib/shortcodes/image.js')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
@@ -22,13 +23,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('markdown', require('./lib/filters/markdown.js'));
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
   eleventyConfig.addCollection('category', require('./lib/collections/category.js'));
+  eleventyConfig.addCollection('event', require('./lib/collections/event.js'));
   eleventyConfig.addCollection('post', require('./lib/collections/post.js'));
 
-  eleventyConfig.addPassthroughCopy('./src/assets');
+  eleventyConfig.addTransform('htmlmin', require('./lib/transforms/htmlmin.js'));
+
+  eleventyConfig.addPassthroughCopy('./src/assets/');
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
-  eleventyConfig.addPassthroughCopy('./src/media');
+  eleventyConfig.addPassthroughCopy('./src/media/');
 
   return {
     dir: {

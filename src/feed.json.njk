@@ -9,26 +9,25 @@ permalink: /feed.json
 "feed_url": "{{ site.feed.json }}",
 "description": "{{ site.description }}",
 "authors": [
-{
-"name": "@{{ site.author.handle }}",
-"url": "{{ site.author.url }}"
-}
+  {
+  "name": "@{{ site.author.handle }}",
+  "url": "{{ site.author.url }}"
+  }
 ],
 "items": [
-{%- for post in collections.post | limit(10) -%}
-{%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset -%}
-{
-"id": "{{ absolutePostUrl }}",
-"url": "{{ absolutePostUrl }}",
-"title": "{{ post.data.title }}",
-"content_html":
-{% if post.templateContent %}
-{{ post.templateContent | dump | safe }}
-{% else %}""{% endif %},
-"date_published": "{{ post.date | dateToRfc3339 }}"
-}
-{%- if not loop.last %},
-{% endif %}
-{%- endfor %}
+  {%- for post in collections.post | limit(10) -%}
+  {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset -%}
+  {
+    "id": "{{ absolutePostUrl }}",
+    "url": "{{ absolutePostUrl }}",
+    "title": "{{ post.data.title }}",
+    "content_html":
+      {% if post.templateContent %}
+      {{ post.templateContent | dump | safe }}
+      {% else %}""{% endif %},
+    "date_published": "{{ post.date | dateToRfc3339 }}"
+  }
+    {%- if not loop.last %},{%- endif %}
+  {%- endfor %}
 ]
 }
