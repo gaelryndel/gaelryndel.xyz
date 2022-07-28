@@ -9,7 +9,7 @@ type: page
 category: page
 override:tags: []
 ---
-<ol>
+<ul>
 {%- for item in collections.event | reverse -%}
   <li>
       <a href="{{ item.url | url }}">
@@ -18,4 +18,4 @@ override:tags: []
       {{ item.data.title }}
   </li>
 {%- endfor -%}
-</ol>
+</ul>

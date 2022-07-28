@@ -37,10 +37,10 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "netlify-plugin-cache": "^1.0.3",
-    "sanitize-html": "^2.7.0"
+    "sanitize-html": "^2.7.1"
   },
   "devDependencies": {
-    "markdownlint-cli": "^0.31.1",
+    "markdownlint-cli": "^0.32.1",
     "prettier": "^2.7.1"
   },
   "prettier": {
