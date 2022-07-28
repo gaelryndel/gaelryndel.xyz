@@ -17,7 +17,6 @@
   [plugins.inputs]
     paths = [
       "_site/assets/img", # 11ty image disk cache
-      "_site/img/generated", # 11ty image disk cache
       ".cache" # remote asset cache
     ]
 
