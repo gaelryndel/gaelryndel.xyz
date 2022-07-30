@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const Webmentions = require('eleventy-plugin-webmentions');
 const imageShortcode = require('./lib/shortcodes/image.js');
 
 module.exports = function (eleventyConfig) {
@@ -15,6 +16,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(Webmentions, {
+    domain: "gaelryndel.xyz",
+    token: "fq7opMQ0MIxV9b53AqY_Hw",
+    cacheDirectory: "./.cache"
+  });
 
   eleventyConfig.addFilter('cssmin', require('./lib/filters/cssmin.js'));
   eleventyConfig.addFilter('date', require('./lib/filters/datetime.js'));

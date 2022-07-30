@@ -19,6 +19,14 @@
       ".cache", # 11ty disk cache
     ]
 
+[[plugins]]
+  package = "netlify-plugin-webmentions"
+
+	[plugins.inputs]
+	baseUrl = "https://gaelryndel.xyz"
+	feedPath = "/feed.xml"
+	limit = 1
+
 [[headers]]
   for = "/*"
 
